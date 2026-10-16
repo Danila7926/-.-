@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Найти помощь — Взаимная корзина</title>
+  <style>
+    /* Те же стили */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; color: #333; }
+    header { background-color: #ffffff; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+    .logo { font-size: 24px; font-weight: bold; color: #2c3e50; }
+    nav a { text-decoration: none; color: #555; margin-left: 20px; font-weight: 500; }
+    nav a:hover { color: #3498db; }
+    
+    main { max-width: 1200px; margin: 40px auto; padding: 20px; }
+    
+    /* Фильтры */
+    .filters { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+    .filters select, .filters input { padding: 10px; border-radius: 6px; border: 1px solid #ddd; }
+    
+    /* Сетка карточек */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+    
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card-header { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .city-tag { color: #3498db; font-weight: bold; font-size: 14px; }
+    .price { color: #e74c3c; font-weight: bold; font-size: 16px; }
+    .desc { margin-bottom: 20px; color: #555; line-height: 1.5; }
+    .skills-list { list-style: none; padding: 0; margin: 15px 0; }
+    .skills-list li { background: #f1f6fc; color: #2c3e50; padding: 5px 10px; display: inline-block; margin-right: 8px; margin-bottom: 8px; border-radius: 20px; font-size: 13px; }
+    
+    .action-btn { width: 100%; padding: 12px; background-color: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .action-btn:hover { background-color: #27ae60; }
+
+    footer { text-align: center; padding: 20px; color: #999; font-size: 14px; margin-top: 50px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛒 Взаимная корзина</div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="create.html">Создать корзину</a>
+      <a href="find.html">Найти помощь</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Предложения для обмена</h2>
+    
+    <div class="filters">
+      <input type="text" placeholder="Поиск по городу...">
+      <select>
+        <option>Любая помощь</option>
+        <option>Уборка</option>
+        <option>Готовка</option>
+        <option>Переезд</option>
+      </select>
+      <button style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer;">Найти</button>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Карточка 1 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="city-tag">Москва</span>
+          <span class="price">5 200 ₽</span>
+        </div>
+        <p class="desc">Корзина на Wildberries. Нужны базовые вещи для дома. Взамен помогу с генеральной уборкой квартиры (до 50 кв.м) или приготовлю ужин на 3 персоны.</p>
+        <ul class="skills-list">
+          <li>Уборка</li>
+          <li>Готовка</li>
+          <li>Глажка</li>
+        </ul>
+        <button class="action-btn" onclick="alert('Вы нажали "Откликнуться"')">Откликнуться</button>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="city-tag">Казань</span>
+          <span class="price">3 100 ₽</span>
+        </div>
+        <p class="desc">Заказ на Ozon (косметика и бытовая химия). Взамен могу посидеть с ребенком 1 вечер или помочь с мелким ремонтом (повесить полку, поменять лампочку).</p>
+        <ul class="skills-list">
+          <li>Няня</li>
+          <li>Мелкий ремонт</li>
+        </ul>
+        <button class="action-btn" onclick="alert('Вы нажали "Откликнуться"')">Откликнуться</button>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="city-tag">Санкт-Петербург</span>
+          <span class="price">8 000 ₽</span>
+        </div>
+        <p class="desc">Большая корзина на Яндекс Маркете (техника). Взамен предлагаю помощь с переездом (я сильная, помогу таскать коробки) или 3 дня помощи по саду.</p>
+        <ul class="skills-list">
+          <li>Переезд</li>
+          <li>Сад/Огород</li>
+        </ul>
+        <button class="action-btn" onclick="alert('Вы нажали "Откликнуться"')">Откликнуться</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 202

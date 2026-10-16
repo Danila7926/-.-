@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Создать корзину — Взаимная корзина</title>
+  <style>
+    /* Копируем стили из главного файла для единообразия */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; color: #333; }
+    header { background-color: #ffffff; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+    .logo { font-size: 24px; font-weight: bold; color: #2c3e50; }
+    nav a { text-decoration: none; color: #555; margin-left: 20px; font-weight: 500; }
+    nav a:hover { color: #3498db; }
+    main { max-width: 600px; margin: 40px auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    label { display: block; margin-top: 15px; font-weight: 600; color: #444; }
+    input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+    button.submit-btn { margin-top: 25px; width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 6px; font-size: 18px; cursor: pointer; font-weight: bold; }
+    button.submit-btn:hover { background-color: #2980b9; }
+    footer { text-align: center; padding: 20px; color: #999; font-size: 14px; margin-top: 50px; }
+    .hint { font-size: 12px; color: #888; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛒 Взаимная корзина</div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="create.html">Создать корзину</a>
+      <a href="find.html">Найти помощь</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Опубликовать свою корзину</h2>
+    <p style="color: #666;">Заполните форму, чтобы предложить обмен.</p>
+
+    <form onsubmit="handleCreate(event)">
+      <label for="city">Город</label>
+      <select id="city" required>
+        <option value="" disabled selected>Выберите город</option>
+        <option value="Москва">Москва</option>
+        <option value="Санкт-Петербург">Санкт-Петербург</option>
+        <option value="Казань">Казань</option>
+        <option value="Другой">Другой</option>
+      </select>
+
+      <label for="link">Ссылка на корзину (WB, Ozon и т.д.)</label>
+      <input type="url" id="link" placeholder="https://www.wildberries.ru/..." required>
+      <span class="hint">Скопируйте ссылку на страницу корзины.</span>
+
+      <label for="total">Общая стоимость корзины (руб.)</label>
+      <input type="number" id="total" placeholder="Например: 5000" required>
+
+      <label for="skills">Какую помощь предлагаете взамен?</label>
+      <textarea id="skills" rows="4" placeholder="Уборка, готовка, выгул собаки, помощь с переездом..." required></textarea>
+
+      <label for="photo">Фото корзины (скриншот)</label>
+      <input type="file" id="photo" accept="image/*">
+      <span class="hint">Это повысит доверие к вашему предложению.</span>
+
+      <button type="submit" class="submit-btn">Опубликовать корзину</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2024 Взаимная корзина. Безопасность пользователей — приоритет.
+  </footer>
+
+  <script>
+    function handleCreate(e) {
+      e.preventDefault();
+      alert('Форма отправлена! В реальном проекте данные ушли бы в базу данных.');
+    }
+  </script>
+</body>
+</html>
